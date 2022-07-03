@@ -7,3 +7,11 @@ export function getList(params) {
     params
   })
 }
+
+export function getRemindList(params) {
+  return request({
+    url: 'http://43.138.219.184/api/remind/1000014',
+    method: 'get',
+    params
+  })
+}

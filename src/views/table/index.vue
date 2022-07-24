@@ -125,7 +125,7 @@ export default {
           "repeat_type": "na",
           "repeat_value": "na",
           "last_remind": null,
-          "status": "wait"
+          "status": "end"
         },
         {
           "remind_id": 19,
@@ -135,7 +135,7 @@ export default {
           "repeat_type": "na",
           "repeat_value": "na",
           "last_remind": null,
-          "status": "wait"
+          "status": "end"
         },
         {
           "remind_id": 20,
@@ -185,7 +185,7 @@ export default {
           "repeat_type": "na",
           "repeat_value": "na",
           "last_remind": null,
-          "status": "wait"
+          "status": "end"
         },
         {
           "remind_id": 27,
@@ -205,17 +205,17 @@ export default {
           "repeat_type": "na",
           "repeat_value": "na",
           "last_remind": null,
-          "status": "wait"
+          "status": "end"
         },
         {
           "remind_id": 29,
           "create_time": "2022-07-03 17:39:08",
-          "remind_time": "2022-07-03 20:39:00",
+          "remind_time": "2022-07-04 11:39:00",
           "remind_words": "测试3",
           "repeat_type": "hour",
           "repeat_value": "3",
-          "last_remind": null,
-          "status": "wait"
+          "last_remind": "2022-07-04 08:39:02",
+          "status": "end"
         },
         {
           "remind_id": 30,
@@ -265,16 +265,39 @@ export default {
           "repeat_type": "na",
           "repeat_value": "na",
           "last_remind": null,
+          "status": "end"
+        },
+        {
+          "remind_id": 35,
+          "create_time": "2022-07-04 09:54:30",
+          "remind_time": "2022-07-05 20:00:00",
+          "remind_words": "测试2",
+          "repeat_type": "na",
+          "repeat_value": "na",
+          "last_remind": null,
+          "status": "wait"
+        },
+        {
+          "remind_id": 36,
+          "create_time": "2022-07-04 09:54:47",
+          "remind_time": "2022-07-04 15:00:00",
+          "remind_words": "测试3",
+          "repeat_type": "na",
+          "repeat_value": "na",
+          "last_remind": null,
           "status": "wait"
         }
       ]
       this.listLoading = false
 
+
       // getRemindList().then(response => {
       //   console.info(response);
       //   this.list = response.data.items
       //   this.listLoading = false
-      // }
+      // }).catch(err=>{
+      //   console.info(err);
+      // })
 
     }
 

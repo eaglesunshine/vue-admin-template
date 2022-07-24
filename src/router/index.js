@@ -46,10 +46,10 @@ export const constantRoutes = [
   {
     path: '/',
     component: Layout,
-    redirect: '/dashboard',
+    redirect: '/remind',
     children: [{
-      path: 'dashboard',
-      name: 'Dashboard',
+      path: 'remind',
+      name: 'remind',
       component: () => import('@/views/table/index'),
       meta: { title: '提醒列表', icon: 'dashboard' }
     }]

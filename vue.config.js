@@ -31,7 +31,9 @@ module.exports = {
   productionSourceMap: false,
   devServer: {
     disableHostCheck: true,
-    proxy: 'http://43.138.219.184:80',
+    //http://127.0.0.1:8000
+    //http://43.138.219.184:80
+    proxy: 'http://127.0.0.1:8000',
     port: port,
     open: true,
     overlay: {

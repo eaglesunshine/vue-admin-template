@@ -8,9 +8,23 @@ export function getList(params) {
   })
 }
 
-export function getRemindList() {
+export function getRemindList($user_id) {
   return request({
-    url: '/api/remind/1000014',
+    url: '/api/remind/query/chat_id/' + $user_id,
+    method: 'get',
+  })
+}
+
+export function getToken() {
+  return request({
+    url: '/api/suite_access_token',
+    method: 'get',
+  })
+}
+
+export function getUserInfo($code, $token) {
+  return request({
+    url: '/api/user_info/' + $code + '/' + $token,
     method: 'get',
   })
 }

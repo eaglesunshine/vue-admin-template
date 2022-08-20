@@ -8,23 +8,19 @@ export function getList(params) {
   })
 }
 
+// export function getRemindList($user_id) {
+//   return request({
+//     url: '/api/remind/query/chat_id/' + $user_id,
+//     method: 'get',
+//   })
+// }
+
 export function getRemindList($user_id) {
   return request({
-    url: '/api/remind/query/chat_id/' + $user_id,
-    method: 'get',
-  })
-}
-
-export function getToken() {
-  return request({
-    url: '/api/suite_access_token',
-    method: 'get',
-  })
-}
-
-export function getUserInfo($code, $token) {
-  return request({
-    url: '/api/user_info/' + $code + '/' + $token,
-    method: 'get',
+    url: '/relay/api',
+    method: 'post',
+    data: {
+      uri: 'remind/query/chat_id/' + $user_id,
+    }
   })
 }

@@ -111,7 +111,7 @@ export default {
     getRemindList() {
       this.listLoading = true
       getRemindList(this.user_id).then(response => {
-        this.list = response.data
+        this.list = response.data.output
         this.listLoading = false
       }).catch(err=>{
         console.log(err);

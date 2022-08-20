@@ -107,6 +107,16 @@ export default {
     handleDel(row){
     },
 
+    //获取提醒事件列表
+    getRemindList() {
+      this.listLoading = true
+      getRemindList(this.user_id).then(response => {
+        this.list = response.data
+        this.listLoading = false
+      }).catch(err=>{
+        console.log(err);
+      })
+    }
   }
 }
 </script>

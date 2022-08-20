@@ -64,17 +64,15 @@
 </template>
 
 <script>
-import { getRemindList, getToken, getUserInfo } from '@/api/table'
+import { getRemindList } from '@/api/table'
 
 export default {
   //属性
   data() {
     return {
-      code: this.$route.query.code,
-      suite_access_token: "",
       user_info: null,
-      user_id: "",
-      corp_id: "",
+      user_id: this.$route.query.user_id,
+      corp_id: this.$route.query.corp_id,
       list: null,
       listLoading: true
     }
@@ -82,13 +80,9 @@ export default {
 
   //在模板渲染成html前调用，即通常初始化某些属性值，然后再渲染成视图
   created() {
-    this.get_user_info();
-    this.getRemindList();
-  },
-
-  //在模板渲染成html后调用，通常是初始化页面完成后
-  mounted() {
-    console.log(this.code);
+    console.log(this.user_id);
+    console.log(this.corp_id);
+    this.getRemindList(this.user_id);
   },
 
   //过滤器：对要显示的数据进行特定格式化后再显示
@@ -112,39 +106,6 @@ export default {
     //TODO：删除提醒事件
     handleDel(row){
     },
-
-    //TODO：获取用户信息
-    get_user_info(){
-      // 从缓存中读取 suite_access_token
-      getToken().then(response => {
-        this.suite_access_token = response.data;
-      }).catch(err=>{
-        console.log(err);
-      })
-
-      // 获取访问用户信息
-      getUserInfo().then(response => {
-        //记录用户信息
-        this.user_info = response.data;
-        this.user_id = response.data.user_id;
-        this.corp_id = response.data.corp_id;
-      }).catch(err=>{
-        console.log(err);
-      })
-
-    },
-
-    //获取提醒事件列表
-    getRemindList() {
-      this.listLoading = true
-      getRemindList(this.user_id).then(response => {
-        this.list = response.data
-        this.listLoading = false
-      }).catch(err=>{
-        console.log(err);
-      })
-
-    }
 
   }
 }
